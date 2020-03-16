@@ -1,0 +1,38 @@
+Here is some information about the code from: http://barmpalias.net/schelcode.shtml
+
+We noticed that the only code for simulations of the Schelling models that we could find on-line is written in high-level languages and is rather slow (allowing only for very small population modelling). So we wrote some in C++ which is much faster than what is available on the web. The fastest we can get is when we eliminate the use of dynamic lists, like we did in one version for the 2-dimensional model. The 1-dimensional simulation is reasonably fast even with active use of dynamic lists. 
+
+
+Simulation of 1D model with closed dynamics (C++, no graphic libraries required, produces bmp)
+
+This simulates a standard version of the one-dimensional Schelling model without pertubations, very close to Schelling's original model. It does not require any graphics libraries and at the end of the simulation it saves an (uncompressed) bitmap in the current directory. It uses dynamic lists, whose operations have the bigest impact on performance. Press 'f' for fullscreen (and back to window) and 'q' for quitting. It takes as input the population size, intolerance parameter, neighbourhood size and proportion of the minority population. Moreover you can specify the pixel dimensions that you want the output picture to be. It can produce very high resolution pictures. For the details and the theory of the simulated model read Digital morphogenesis via Schelling segregation or Minority population in one-dimensional Schelling segregation, as well as the work by Brandt, Immorlica, Kamath and Kleinberg that we cite in our papers.
+
+
+Animation of 1D model with closed dynamics (C++, requires OpenGL/GLUT)
+
+This produces an animation of the standard version of the one-dimensional Schelling model without pertubations, very close to Schelling's original model. It opens a separate window with the initial configuration and it starts when you press the key 'g' on the keyboard. Press 'f' for fullscreen (and back to window) and 'q' for quitting. Moreover you can pause it, pressing the same key, and restarted with the same action. It does require OpenGL and GLUT graphics frameworks. It uses dynamic lists, whose operations have the bigest impact on performance. It takes as input the population size, intolerance parameter, neighbourhood size and proportion of the minority population. Moreover you can specify the pixel dimensions that you want the output picture to be. It can produce very high resolution pictures. For the details and the theory of the simulated model read Digital morphogenesis via Schelling segregation or Minority population in one-dimensional Schelling segregation, as well as the earlier work by Brandt, Immorlica, Kamath and Kleinberg that we cite in our papers.
+
+
+Animation of 2D model with closed dynamics (C++, no dynamic lists, requires OpenGL/GLUT)
+
+This produces an animation of the standard version of the two-dimensional Schelling model on a grid without pertubations, very close to Schelling's original model. It opens a separate window with the initial configuration and it starts when you press the key 'g' on the keyboard. Press 'f' for fullscreen (and back to window) and 'q' for quitting. Moreover you can pause it, pressing the same key, and restarted with the same action. Press 'p' and 'l' for zooming in and out, and use the keyboard arrows to move the grid inside the window. It does require OpenGL and GLUT graphics frameworks. It does not dynamic lists (except in a static way, i.e. without actively adding and removing elements during the run) and this makes it faster for large simulations. It takes as input the population size, intolerance parameter, neighbourhood size and proportion of the minority population.
+
+
+Animation of 2D model with closed dynamics (C++, with dynamic lists, requires OpenGL/GLUT)
+
+This is the same as the above, only that it does use dynamic lists, which makes it slower for large populations. But the code (and the algorithm) is simpler.
+
+
+Animation of 2D model with asynchronous open dynamics (C++, no dynamic lists, requires OpenGL/GLUT)
+
+A node is hopeful if it is currently unhappy and by changing its colour it becomes happy. This simulation is with open dynamics, so that at each step a hopeful node is chosen randomly and its color is changed. Asynchronous refers to the fact that only one node is treated at each stage. This algorithm works with static arrays (of fixed length), using a system of pointers that indicate which entries are populated. The use of static arrays makes the code faster.
+
+
+Animation of 2D model with synchronous open dynamics (C++, requires OpenGL/GLUT)
+
+This simulation is with open dynamics. At each step the nodes that were hopeful at the end of the previous step are processed one-by-one in the canonical order, and if they are still hopefull at the time they are visited, they change colour. Synchronous refers to the fact that all hopeful nodes are treated at once.
+
+
+Step-by-step animation of 2D model with closed dynamics (C++, requires OpenGL/GLUT)
+
+This is for small populations, indicating each swap gradually. To move to the next swap press 'g' twice. The first time the swapping pair will be highlighted, and the second time the swap will be executed. Other controls are as above.
