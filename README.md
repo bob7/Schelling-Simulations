@@ -35,3 +35,6 @@ Journal of Statistical Physics (2015) 158
 Precise specifications of the models can be found in these articles, also available at: 
 http://barmpalias.net/publications/publ.shtml
 
+![alt text](https://github.com/bob7/Schelling-Simulations/blob/master/images_readme/2Dseg.png)
+
+![alt text](https://github.com/bob7/Schelling-Simulations/blob/master/images_readme/3Dsm.png)
