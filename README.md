@@ -14,6 +14,9 @@ and the OpenGL/GLUT framework for interactive 1D, 2D animations, as well as 3D g
 
 More information: http://barmpalias.net/schelcode.shtml 
 
+![alt text](https://github.com/bob7/Schelling-Simulations/blob/master/images_readme/1Dfless.png)
+
+
 Written by Barmpalias, Lewis-Pye and Elwes as part of their mathematical work on Schelling segregation.
 Part of this code was used in the following published research (all by G.Barmpalias, R.Elwes and A.Lewis-Pye):
 
